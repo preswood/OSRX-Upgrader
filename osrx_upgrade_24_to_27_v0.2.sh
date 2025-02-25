@@ -1,5 +1,5 @@
 #!/bin/bash
-ver="0.2"
+ver="0.2.1"
 #Check if root
 if [ "$EUID" -ne 0 ]
         then echo "ERROR! You must run as ROOT!"
@@ -12,6 +12,11 @@ echo "OS/RX UPGRADE SCRIPT VERSION $ver"
 echo "This script will upgrade your system to OS/RX \"Sauter\" 27."
 echo "Please back up your important files as system upgrades may not always work."
 echo "Before running, make sure your system has a stable connection to the internet."
+echo "Furthermore, make sure that your kernel is 6.1 or newer and that your system"
+echo "meets OS/RX 27 requirements (www.osrx.co.uk/osrx-download)."
+echo "For OS/RX Server users: make sure you \"APT-MARK HOLD\" packages you don't want"
+echo "changed/upgraded before upgrading! Common packages to fail are apache2, mysql,"
+echo "mysql-*, php, php-*."
 echo "Press [ENTER] to start."
 read enter
 #Move all Debian 11 compatible sources to the "OLD" folder
